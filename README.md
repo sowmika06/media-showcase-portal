@@ -11,3 +11,4 @@ Responsive design for all screen sizes
 
 AI Tools Used
 ChatGPT (OpenAI): Used for code generation, debugging, and optimizing design layout.
+LIVE URL-https://sowmika06.github.io/media-showcase-portal/
