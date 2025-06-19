@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Media Showcase Portal</title>
+  <style>
+    :root {
+      --bg: #f9f9f9;
+      --text: #222;
+      --card: #fff;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+    body.dark {
+      --bg: #121212;
+      --text: #f1f1f1;
+      --card: #1e1e1e;
+      --shadow: rgba(255, 255, 255, 0.05);
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      transition: 0.3s ease;
+    }
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #842020;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    header {
+      background: #842020;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .toggle-btn {
+      background: white;
+      color: #842020;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    nav {
+      background: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      overflow-x: auto;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #842020;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px var(--shadow);
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      color: #842020;
+    }
+    .video-card {
+      background: var(--card);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--shadow);
+    }
+    .video-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #842020;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+    .watch-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #842020;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .watch-btn:hover {
+      background: #a32828;
+    }
+    @media(max-width: 600px) {
+      .gallery { flex-direction: column; align-items: center; }
+      iframe { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>📊 Media Showcase Portal</h1>
+    <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">Toggle Dark Mode</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#video1">Video 1</a>
+    <a href="#video2">Video 2</a>
+    <a href="#video3">Video 3</a>
+    <a href="#video4">Video 4</a>
+    <a href="#video5">Video 5</a>
+    <a href="#video6">Video 6</a>
+    <a href="#video7">Video 7</a>
+    <a href="#video8">Video 8</a>
+    <a href="#video9">Video 9</a>
+    <a href="#video10">Video 10</a>
+  </nav>
+
+  <!-- Content -->
+  <div class="container">
+    <h2 class="section-title">📷 Image Gallery</h2>
+    <section class="gallery">
+      <img src="https://drive.google.com/uc?export=view&id=1fiR2GQMSJvaXysh2KGq9Q8iaBq_H0SZB" alt="Image 1">
+      <img src="https://drive.google.com/uc?export=view&id=1bYgnE4g5APwpl-MAl3QRncxzh8juGhB4" alt="Image 2">
+      <img src="https://drive.google.com/uc?export=view&id=1mf_mu-v2ODfoqLEHT0XgsUjX6k2Wmlk0" alt="Image 3">
+    </section>
+
+    <h2 class="section-title">🎬 Video Showcase</h2>
+
+    <!-- Videos -->
+    <!-- Repeat this block for each video -->
+    <div class="video-card" id="video1">
+      <h2>Video 1</h2>
+      <iframe src="https://drive.google.com/file/d/1XaiLt9PwR2uyRLm6rnit8PNkWUXUogCy/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1XaiLt9PwR2uyRLm6rnit8PNkWUXUogCy/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video2">
+      <h2>Video 2</h2>
+      <iframe src="https://drive.google.com/file/d/1Oyf5tisuqfejCl3_3dN3ZKmtrjAGjOf_/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1Oyf5tisuqfejCl3_3dN3ZKmtrjAGjOf_/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video3">
+      <h2>Video 3</h2>
+      <iframe src="https://drive.google.com/file/d/1P6A995ug4Ed0eVR60AnER7uOQyNP0HHe/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1P6A995ug4Ed0eVR60AnER7uOQyNP0HHe/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video4">
+      <h2>Video 4</h2>
+      <iframe src="https://drive.google.com/file/d/1QNg6uQLhrPhOI_Log55mu_sQpi4opNM-/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1QNg6uQLhrPhOI_Log55mu_sQpi4opNM-/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video5">
+      <h2>Video 5</h2>
+      <iframe src="https://drive.google.com/file/d/1-l0Jw3ubFL5JHCqdzcrES1hpk_KbtrdS/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1-l0Jw3ubFL5JHCqdzcrES1hpk_KbtrdS/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video6">
+      <h2>Video 6</h2>
+      <iframe src="https://drive.google.com/file/d/1DZtinb9772K-ciIxPgPqnHZFQzc0kAeY/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1DZtinb9772K-ciIxPgPqnHZFQzc0kAeY/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video7">
+      <h2>Video 7</h2>
+      <iframe src="https://drive.google.com/file/d/1Ndf09vYOG4B5ipTEZsui4CAw68N_RKVi/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1Ndf09vYOG4B5ipTEZsui4CAw68N_RKVi/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video8">
+      <h2>Video 8</h2>
+      <iframe src="https://drive.google.com/file/d/1AETeJTv5wwOBvVfyn_a9bvIoCxUgK7dC/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1AETeJTv5wwOBvVfyn_a9bvIoCxUgK7dC/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video9">
+      <h2>Video 9</h2>
+      <iframe src="https://drive.google.com/file/d/1bpvo_U-iHUXFeuUK_RMBcC3v0_dmoFoe/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1bpvo_U-iHUXFeuUK_RMBcC3v0_dmoFoe/view" target="_blank">Watch Now</a>
+    </div>
+    <div class="video-card" id="video10">
+      <h2>Video 10</h2>
+      <iframe src="https://drive.google.com/file/d/1yNcZSA3wK0COf_5jhjx_KuftHI5tzOdC/preview" allow="autoplay"></iframe>
+      <a class="watch-btn" href="https://drive.google.com/file/d/1yNcZSA3wK0COf_5jhjx_KuftHI5tzOdC/view" target="_blank">Watch Now</a>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
